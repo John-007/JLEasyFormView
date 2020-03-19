@@ -30,6 +30,7 @@ class JLEasyFormView: UIView {
     var rowCount = 0
     
     var leftTitleMargin = 20.0
+    var leftTitleLabelFont = UIFont.systemFont(ofSize: 14)
     
     var formRowList:Array<UIView> = Array()
     
@@ -68,6 +69,11 @@ class JLEasyFormView: UIView {
     //标题左侧边距
     @discardableResult func setLeftTitleMargin(margin: Double) -> Self {
         self.leftTitleMargin = Double(margin)
+        return self
+    }
+    //标题文字Font
+    @discardableResult func setLeftTitleLabelFont(font: UIFont) -> Self {
+        self.leftTitleLabelFont = font
         return self
     }
     //标题数组
@@ -129,9 +135,9 @@ class JLEasyFormView: UIView {
                 let leftTitle = UILabel()
                 rowView.addSubview(leftTitle)
                 leftTitle.text = rowTitleList[i]
-                
+                leftTitle.font = leftTitleLabelFont
                 let textMaxSize = CGSize(width: 240, height: CGFloat(rowHeightForOne))
-                let textLabelSize = textSize(text:rowTitleList[i] , font: UIFont.systemFont(ofSize: 14), maxSize: textMaxSize)
+                let textLabelSize = textSize(text:rowTitleList[i] , font: leftTitleLabelFont, maxSize: textMaxSize)
 
                 leftTitle.frame = CGRect(origin: CGPoint(x: CGFloat(leftTitleMargin), y: (CGFloat(rowHeightForOne) - textLabelSize.height)/2), size: textLabelSize)
                 leftTitle.adjustsFontSizeToFitWidth = true

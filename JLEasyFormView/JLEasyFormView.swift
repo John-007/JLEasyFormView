@@ -30,7 +30,7 @@ class JLEasyFormView: UIView {
     
     var leftTitleMargin = 20.0
     var leftTitleLabelFont = UIFont.systemFont(ofSize: 14)
-    
+    var leftTitleLabelColor = UIColor.black
     var formRowList:Array<UIView> = Array()
     
     
@@ -73,6 +73,11 @@ class JLEasyFormView: UIView {
     //标题文字Font
     @discardableResult func setLeftTitleLabelFont(font: UIFont) -> Self {
         self.leftTitleLabelFont = font
+        return self
+    }
+    //标题文字颜色
+    @discardableResult func setLeftTitleLabelColor(color: UIColor) -> Self {
+        self.leftTitleLabelColor = color
         return self
     }
     //标题数组
@@ -135,6 +140,7 @@ class JLEasyFormView: UIView {
                 rowView.addSubview(leftTitle)
                 leftTitle.text = rowTitleList[i]
                 leftTitle.font = leftTitleLabelFont
+                leftTitle.textColor = leftTitleLabelColor
                 let textMaxSize = CGSize(width: 240, height: CGFloat(rowHeightForOne))
                 let textLabelSize = textSize(text:rowTitleList[i] , font: leftTitleLabelFont, maxSize: textMaxSize)
 

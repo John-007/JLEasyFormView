@@ -1,7 +1,7 @@
 # JLEasyFormView
 Helps you easily create lists view.
 
-#通过简单方便的点语法创建表单页面
+>通过简单方便的点语法创建表单页面
 
 ```swift
 let formView = JLEasyFormView(frame: CGRect(origin: CGPoint(x: 0, y: 60), size: CGSize(width: view.width, height: view.height - 60 )))
@@ -14,12 +14,12 @@ let formView = JLEasyFormView(frame: CGRect(origin: CGPoint(x: 0, y: 60), size: 
 .startBuldRow() //结尾处调用，开始搭建
 ```
             
-##添加到父视图
+>添加到父视图
 ```swift
 view.addSubview(formView)
 ```
 
-##遍历得到每一行的view，可以在此处自定义每一行的控件
+>遍历得到每一行的view，可以在此处自定义每一行的控件
 ```swift
 for subView in formView.formRowList{
 

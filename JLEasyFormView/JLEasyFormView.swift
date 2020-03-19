@@ -1,6 +1,5 @@
 //
 //  JLEasyFormView.swift
-//  aigo_SmartWatch
 //
 //  Created by ChingMi on 2020/3/18.
 //  Copyright © 2020  John. All rights reserved.

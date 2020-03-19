@@ -23,9 +23,13 @@ class JLEasyFormView: UIView {
     var specialLineHeightDict:Dictionary<Int,Double> = [:]
     //左侧label内容数组
     var rowTitleList:Array<String> = Array()
+    
+    
     var rowBGColor = UIColor.white
     var rowLineColor = UIColor.black
     var rowCount = 0
+    
+    var leftTitleMargin = 20.0
     
     var formRowList:Array<UIView> = Array()
     
@@ -59,6 +63,11 @@ class JLEasyFormView: UIView {
     //行宽
     @discardableResult func setRowWidth(width: Double) -> Self {
         self.rowWidth = Double(width)
+        return self
+    }
+    //标题左侧边距
+    @discardableResult func setLeftTitleMargin(margin: Double) -> Self {
+        self.leftTitleMargin = Double(margin)
         return self
     }
     //标题数组
@@ -98,7 +107,7 @@ class JLEasyFormView: UIView {
               
             var rowHeightForOne = rowHeight
             var rowWidthForOne = self.width
-            
+            var leftMarginForOne = leftTitleMargin
             
             if rowHeightList.count != 0 {
                 rowHeightForOne = rowHeightList[i]
@@ -124,7 +133,7 @@ class JLEasyFormView: UIView {
                 let textMaxSize = CGSize(width: 240, height: CGFloat(rowHeightForOne))
                 let textLabelSize = textSize(text:rowTitleList[i] , font: UIFont.systemFont(ofSize: 14), maxSize: textMaxSize)
 
-                leftTitle.frame = CGRect(origin: CGPoint(x: 20, y: (CGFloat(rowHeightForOne) - textLabelSize.height)/2), size: textLabelSize)
+                leftTitle.frame = CGRect(origin: CGPoint(x: CGFloat(leftTitleMargin), y: (CGFloat(rowHeightForOne) - textLabelSize.height)/2), size: textLabelSize)
                 leftTitle.adjustsFontSizeToFitWidth = true
             }
             

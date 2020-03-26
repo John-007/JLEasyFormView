@@ -38,7 +38,7 @@ class JLEasyFormView: UIView {
         self.rowCount = count
         return self
     }
-    //行列背景色
+    ///行列背景色
     @discardableResult func setRowBGColor(color: UIColor) -> Self {
         self.rowBGColor = color
         return self
@@ -47,7 +47,7 @@ class JLEasyFormView: UIView {
         self.rowLineColor = color
         return self
     }
-    //行高
+    ///行高
     @discardableResult func setRowHeightList(heightList:Array<Double>) -> Self {
         self.rowHeightList = heightList
         return self
@@ -60,27 +60,27 @@ class JLEasyFormView: UIView {
         self.rowHeight = Double(height)
         return self
     }
-    //行宽
+    ///行宽
     @discardableResult func setRowWidth(width: Double) -> Self {
         self.rowWidth = Double(width)
         return self
     }
-    //标题左侧边距
+    ///标题左侧边距
     @discardableResult func setLeftTitleMargin(margin: Double) -> Self {
         self.leftTitleMargin = Double(margin)
         return self
     }
-    //标题文字Font
+    ///标题文字Font
     @discardableResult func setLeftTitleLabelFont(font: UIFont) -> Self {
         self.leftTitleLabelFont = font
         return self
     }
-    //标题文字颜色
+    ///标题文字颜色
     @discardableResult func setLeftTitleLabelColor(color: UIColor) -> Self {
         self.leftTitleLabelColor = color
         return self
     }
-    //标题数组
+    ///标题数组
     @discardableResult func setRowTitleList(titleList: Array<String>) -> Self {
         self.rowTitleList = titleList
         return self

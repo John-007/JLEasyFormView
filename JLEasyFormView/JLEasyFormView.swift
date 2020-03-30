@@ -23,9 +23,9 @@ class JLEasyFormView: UIView {
     //左侧label内容数组
     var rowTitleList:Array<String> = Array()
     
-    
     var rowBGColor = UIColor.white
     var rowLineColor = UIColor.black
+    var rowLineWidth = 0.0
     var rowCount = 0
     
     var leftTitleMargin = 20.0
@@ -38,15 +38,7 @@ class JLEasyFormView: UIView {
         self.rowCount = count
         return self
     }
-    ///行列背景色
-    @discardableResult func setRowBGColor(color: UIColor) -> Self {
-        self.rowBGColor = color
-        return self
-    }
-    @discardableResult func setRowLineColor(color: UIColor) -> Self {
-        self.rowLineColor = color
-        return self
-    }
+    
     ///行高
     @discardableResult func setRowHeightList(heightList:Array<Double>) -> Self {
         self.rowHeightList = heightList
@@ -63,6 +55,21 @@ class JLEasyFormView: UIView {
     ///行宽
     @discardableResult func setRowWidth(width: Double) -> Self {
         self.rowWidth = Double(width)
+        return self
+    }
+    ///行列背景色
+    @discardableResult func setRowBGColor(color: UIColor) -> Self {
+        self.rowBGColor = color
+        return self
+    }
+    ///分割线背景色
+    @discardableResult func setRowLineColor(color: UIColor) -> Self {
+        self.rowLineColor = color
+        return self
+    }
+    ///分割线背景色
+    @discardableResult func setRowLineWidth(lineWidth: Double) -> Self {
+        self.rowLineWidth = lineWidth
         return self
     }
     ///标题左侧边距
@@ -130,7 +137,11 @@ class JLEasyFormView: UIView {
             addSubview(rowView)
             rowView.backgroundColor = rowBGColor
             
+            
             let rowLine = UIView(frame: CGRect(x: 0, y: rowView.height - 1, width: rowWidthForOne, height: 1))
+            if rowLineWidth != 0.0{
+                rowLine.frame = CGRect(x: (Double(rowWidthForOne) - rowLineWidth)/2, y: Double(rowView.height - 1), width: rowLineWidth, height: 1.0)
+            }
             rowLine.backgroundColor = rowLineColor
             rowView.addSubview(rowLine)
             

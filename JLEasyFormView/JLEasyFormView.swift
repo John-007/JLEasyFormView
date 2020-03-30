@@ -123,7 +123,7 @@ class JLEasyFormView: UIView {
         for i in 0..<rowCount {
               
             var rowHeightForOne = rowHeight
-            var rowWidthForOne = self.width
+            var rowWidthForOne = self.bounds.size.width
             var leftMarginForOne = leftTitleMargin
             
             if rowHeightList.count != 0 {
@@ -138,9 +138,9 @@ class JLEasyFormView: UIView {
             rowView.backgroundColor = rowBGColor
             
             
-            let rowLine = UIView(frame: CGRect(x: 0, y: rowView.height - 1, width: rowWidthForOne, height: 1))
+            let rowLine = UIView(frame: CGRect(x: 0, y: CGFloat(rowHeightForOne) - 1, width: rowWidthForOne, height: 1))
             if rowLineWidth != 0.0{
-                rowLine.frame = CGRect(x: (Double(rowWidthForOne) - rowLineWidth)/2, y: Double(rowView.height - 1), width: rowLineWidth, height: 1.0)
+                rowLine.frame = CGRect(x: (Double(rowWidthForOne) - rowLineWidth)/2, y: Double(rowHeightForOne - 1), width: rowLineWidth, height: 1.0)
             }
             rowLine.backgroundColor = rowLineColor
             rowView.addSubview(rowLine)
@@ -171,119 +171,4 @@ class JLEasyFormView: UIView {
         return text.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin], attributes: [NSAttributedString.Key.font : font], context: nil).size
     }
 
-}
-
-
-public extension UIView {
-    
-    var x: CGFloat {
-        set {
-            frame.origin.x = newValue
-        }
-        get {
-            return frame.origin.x
-        }
-    }
-    
-    var y: CGFloat {
-        set {
-            frame.origin.y = newValue
-        }
-        get {
-            return frame.origin.y
-        }
-    }
-    
-    var height: CGFloat {
-        set {
-            frame.size.height = newValue
-        }
-        get {
-            return frame.size.height
-        }
-    }
-    
-    var width: CGFloat {
-        set {
-            frame.size.width = newValue
-        }
-        get {
-            return frame.size.width
-        }
-    }
-    
-    var halfH: CGFloat {
-        get {
-            return height / 2.0
-        }
-    }
-    
-    var halfW: CGFloat {
-        get {
-            return width / 2.0
-        }
-    }
-    
-    var right: CGFloat {
-        set {
-            x = newValue - width
-        }
-        get {
-            return x + width
-        }
-    }
-    
-    var left: CGFloat {
-        set {
-            x = newValue
-        }
-        get {
-            return x
-        }
-    }
-    
-    var bottom: CGFloat {
-        set {
-            y = newValue - height
-        }
-        get {
-            return y + height
-        }
-    }
-    
-    var centerX: CGFloat {
-        set {
-            center.x = newValue
-        }
-        get {
-            return center.x
-        }
-    }
-    
-    var centerY: CGFloat {
-        set {
-            center.y = newValue
-        }
-        get {
-            return center.y
-        }
-    }
-    
-    var radius: CGFloat {
-        set {
-            layer.cornerRadius = newValue
-        }
-        get {
-            return layer.cornerRadius
-        }
-    }
-    
-    var borderW: CGFloat {
-        set {
-            layer.borderWidth = newValue
-        }
-        get {
-            return layer.borderWidth
-        }
-    }
 }

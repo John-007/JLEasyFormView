@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         
-        let formView = JLEasyFormView(frame: CGRect(origin: CGPoint(x: 0, y: 60), size: CGSize(width: view.width, height: view.height - 60 )))
+        let formView = JLEasyFormView(frame: CGRect(origin: CGPoint(x: 0, y: 60), size: CGSize(width: view.frame.size.width, height: view.frame.size.height - 60 )))
             .setRowHeight(height: 44)
             .setRowHeightList(heightList: [44,45,66,75]).setRowCount(count: 4)
             .setRowTitleList(titleList: ["姓名","昵称","用户ID","积分"])

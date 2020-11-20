@@ -93,7 +93,7 @@ class JLEasyFormView: UIView {
         return self
     }
     
-    @discardableResult func startBuldRow() -> Self {
+    @discardableResult func startBuildRow() -> Self {
         uiBuild()
         return self
     }

@@ -21,7 +21,7 @@ class ViewController: UIViewController {
             .setLeftTitleMargin(margin: 33)
             .setLeftTitleLabelFont(font: UIFont.systemFont(ofSize: 25))
             .setLeftTitleLabelColor(color: UIColor.gray)
-            .startBuldRow()
+            .startBuildRow()
 
         view.addSubview(formView)
             
